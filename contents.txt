@@ -1,0 +1,11 @@
+Notes:
+
+1. Active Network Interface = wlo1
+2. pckt = sniff(iface="wlo1",filter="tcp and port 80",count=5)
+3. wrpcap("testing.pcap",pckt)
+4. p = rdpcap("testing.pcap")
+5. arping("179.165.29.*")
+6. traceroute(["google.com"],maxttl=20)
+7. sr(IP(dst="google.com")/TCP(dport=[80])) -> can be send, sr to just send, recieve only one respectively.
+8. sendp(Ether(src="aa:bb:cc:dd:ee:ff")/IP(dst="google.com",src="192")/TCP(dport=[80]))
+9. public IP WIFI -> 49.37.142.248, Airtel 4g mobile -> 27.59.205.232 both are Ipv4 no Ipv6 is detected	
